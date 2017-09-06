@@ -24,9 +24,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@ComponentScan(basePackages = "com.springmvc.models")
-@ComponentScan(basePackages = "com.springmvc.services")
-@ComponentScan(basePackages = "com.springmvc.repository")
+@ComponentScan({"com.springmvc.repository","com.springmvc.models","com.springmvc.services"})
 @EnableWebMvc
 public class SpringConfig extends WebMvcConfigurerAdapter {
 	private static Logger logger = LoggerFactory.getLogger(SpringConfig.class);
@@ -39,7 +37,7 @@ public class SpringConfig extends WebMvcConfigurerAdapter {
 		vr.setViewClass(JstlView.class);
 		vr.setPrefix("/WEB-INF/views/");
 		vr.setSuffix(".jsp");
-		logger.info("Ïnternal View Resolver is executed");
+		logger.info("Ã�nternal View Resolver is executed");
 		return vr;
 	}
 
